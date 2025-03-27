@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:43 by jetan             #+#    #+#             */
-/*   Updated: 2025/03/27 17:55:40 by jetan            ###   ########.fr       */
+/*   Updated: 2025/03/27 18:03:52 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 class Fixed
 {
-private:
-	
-public:
-	Fixed();
-	~Fixed();
+	private:
+		
+	public:
+		Fixed();
+		~Fixed();
 };
 
 

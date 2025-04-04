@@ -19,11 +19,12 @@ class Fixed
 		int rawBits;
 		static const int fractionalBits;
 	public:
-		Fixed();
-		~Fixed();
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+		Fixed();//Default constructor
+		Fixed(const Fixed &other);//Copy constructor
+		Fixed& operator=(const Fixed& other);//Copy assignment operator
+		~Fixed();//Destructor
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
 };
-
 
 #endif

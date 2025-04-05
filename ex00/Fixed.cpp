@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Fixed.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:46 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/05 19:55:00 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/05 20:01:36 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ Fixed::Fixed(const Fixed &other)//Copy constructor
 
 Fixed &Fixed::operator=(const Fixed &other)//Copy assignment operator
 {
+	std::cout << "copy assignment operator called" << std::endl;
 	
+	if (this != &other)
+		this->rawValue = other.getRawBits();
+	return *this;
 }
 
 Fixed::~Fixed()

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:46 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/05 20:01:36 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/05 20:03:26 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ Fixed &Fixed::operator=(const Fixed &other)//Copy assignment operator
 
 Fixed::~Fixed()
 {
+	std::cout << "Destructor" << std::endl;
 }

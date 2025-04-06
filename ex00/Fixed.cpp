@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:46 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/06 17:44:01 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/06 19:07:06 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,10 @@ Fixed &Fixed::operator=(const Fixed &other)//Copy assignment operator
 Fixed::~Fixed()
 {
 	std::cout << "Destructor" << std::endl;
+}
+
+//getter function
+int Fixed::getRawBits( void ) const
+{
+	return this->rawValue;
 }

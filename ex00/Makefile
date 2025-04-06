@@ -1,4 +1,4 @@
-NAME = program
+NAME = a.out
 
 SRCS = main.cpp \
 	Fixed.cpp

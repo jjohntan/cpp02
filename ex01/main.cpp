@@ -6,10 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:10 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/06 19:29:25 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/07 14:22:51 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
 #include <iostream>
 
 int	main( void ) {

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:12 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/07 15:29:53 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/07 15:34:14 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,15 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
+/**
+ * @brief getter function
+ */
 int Fixed::getRawBits( void ) const{ return rawValue; }
+
+/**
+ * @brief setter function
+ */
+void Fixed::setRawBits( int const raw )
+{
+	this->rawValue = raw;
+}

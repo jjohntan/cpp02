@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:12 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/07 15:34:14 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/07 16:34:40 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,12 @@ int Fixed::getRawBits( void ) const{ return rawValue; }
 void Fixed::setRawBits( int const raw )
 {
 	this->rawValue = raw;
+}
+
+/**
+ * @brief converts the fixed-point value to a floating-point value
+ */
+float Fixed::toFloat( void ) const
+{
+	return (float)rawValue / (1 << fractionalBits);
 }

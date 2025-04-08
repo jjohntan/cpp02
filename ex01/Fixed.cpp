@@ -6,24 +6,23 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:12 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/08 14:46:33 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/08 15:31:25 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed(): rawValue(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int )
+Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float )
+Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -82,4 +81,14 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return rawValue >> fractionalBits;
+}
+
+/**
+ * @brief An overload of the insertion («) operator that inserts a floating-point representation
+of the fixed-point number into the output stream object passed as parameter.
+ */
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+{
+	os << obj.toFloat();
+	return os;
 }

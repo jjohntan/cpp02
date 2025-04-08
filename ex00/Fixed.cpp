@@ -6,12 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:46 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/06 19:20:24 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/08 15:17:03 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed(): rawValue(0)
 {

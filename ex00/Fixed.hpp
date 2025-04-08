@@ -6,12 +6,14 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:43 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/05 19:11:39 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/08 15:17:11 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
+#include <iostream>
 
 class Fixed
 {

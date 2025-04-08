@@ -6,25 +6,40 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:12 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/08 15:31:25 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/08 15:53:17 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+/**
+ * @brief default constructor
+ */
 Fixed::Fixed(): rawValue(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
+/**
+ * @brief A constructor that takes a constant integer as a parameter.
+ * It converts it to the corresponding fixed-point value
+ */
 Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
+	
+	this->rawValue = value << fractionalBits;
 }
 
+/**
+ * A constructor that takes a constant floating-point number as a parameter.
+It converts it to the corresponding fixed-point value.
+ */
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
+	
+	this->rawValue = roundf(value * (1 << fractionalBits));
 }
 
 /**
@@ -49,6 +64,9 @@ Fixed &Fixed::operator=(const Fixed &other)
 	return *this;
 }
 
+/**
+ * @brief destructor
+ */
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;

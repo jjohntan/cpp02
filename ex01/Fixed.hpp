@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:15 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/08 15:22:27 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/08 15:54:54 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
 	private:
 		int rawValue;
-		static const int fractionalBits;
+		static const int fractionalBits = 8;
 	public:
 		Fixed();//Default constructor
 		Fixed(const int value);

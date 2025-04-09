@@ -6,12 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/09 15:40:23 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/09 20:38:35 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
 
 /**
  * @brief Default constructor
@@ -86,31 +85,60 @@ int Fixed::toInt( void ) const
 //comparison operators
 bool Fixed::operator<(const Fixed &other) const
 {
-	this->rawValue < other.rawValue;
+	return this->rawValue < other.rawValue;
 }
 
 bool Fixed::operator>=(const Fixed &other) const
 {
-	this->rawValue >= other.rawValue;
+	return this->rawValue >= other.rawValue;
 }
 
 bool Fixed::operator>(const Fixed &other) const
 {
-	this->rawValue > other.rawValue;
+	return this->rawValue > other.rawValue;
 }
 
 bool Fixed::operator<=(const Fixed &other) const
 {
-	this->rawValue <= other.rawValue;
+	return this->rawValue <= other.rawValue;
 }
 
 bool Fixed::operator==(const Fixed &other) const
 {
-	this->rawValue == other.rawValue;
+	return this->rawValue == other.rawValue;
 }
 
 bool Fixed::operator!=(const Fixed &other) const
 {
-	this->rawValue != other.rawValue;
+	return this->rawValue != other.rawValue;
 }
 
+// arithmetic operators
+Fixed Fixed::operator+(const Fixed &other) const
+{
+	Fixed newObj = this->toFloat() + other.toFloat();
+
+	return newObj;
+}
+	
+Fixed Fixed::operator-(const Fixed &other) const
+{
+	Fixed newObj = this->toFloat() - other.toFloat();
+
+	return newObj;
+}
+	
+Fixed Fixed::operator*(const Fixed &other) const
+{
+		Fixed newObj = (this->rawValue * other.rawValue) >> fractionalBits;
+		
+		return newObj;
+}
+	
+	Fixed Fixed::operator/(const Fixed &other) const
+	{
+		Fixed newObj = (this->rawValue << fractionalBits) / other.rawValue;
+		
+		return newObj;
+	}
+	

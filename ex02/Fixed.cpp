@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/09 15:13:49 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/09 15:19:55 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,16 @@ Fixed &Fixed::operator=(const Fixed &other)
  */
 Fixed::~Fixed()
 {
+}
+/**
+ * @brief getter function
+ */
+int Fixed::getRawBits( void ) const { return rawValue; }
+
+/**
+ * @brief setter function
+ */
+void Fixed::setRawBits( int const raw )
+{
+	this->rawValue = raw;
 }

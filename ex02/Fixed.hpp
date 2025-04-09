@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:45 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/08 20:08:14 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/09 16:59:54 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ class Fixed
 		bool operator<=(const Fixed &other) const;
 		bool operator==(const Fixed &other) const;
 		bool operator!=(const Fixed &other) const;
+		
+		// arithmetic operators
+		Fixed operator-(const Fixed &other) const;
+		Fixed operator*(const Fixed &other) const;
+		Fixed operator+(const Fixed &other) const;
+		Fixed operator/(const Fixed &other) const;
 };
 
 #endif

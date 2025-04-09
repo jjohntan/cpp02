@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/09 15:23:31 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/09 15:40:23 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,35 @@ int Fixed::toInt( void ) const
 {
 	return rawValue >> fractionalBits;
 }
+
+//comparison operators
+bool Fixed::operator<(const Fixed &other) const
+{
+	this->rawValue < other.rawValue;
+}
+
+bool Fixed::operator>=(const Fixed &other) const
+{
+	this->rawValue >= other.rawValue;
+}
+
+bool Fixed::operator>(const Fixed &other) const
+{
+	this->rawValue > other.rawValue;
+}
+
+bool Fixed::operator<=(const Fixed &other) const
+{
+	this->rawValue <= other.rawValue;
+}
+
+bool Fixed::operator==(const Fixed &other) const
+{
+	this->rawValue == other.rawValue;
+}
+
+bool Fixed::operator!=(const Fixed &other) const
+{
+	this->rawValue != other.rawValue;
+}
+

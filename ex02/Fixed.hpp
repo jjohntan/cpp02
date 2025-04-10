@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:45 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/09 17:47:17 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/10 14:37:13 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ class Fixed
 		Fixed operator-(const Fixed &other) const;
 		Fixed operator*(const Fixed &other) const;
 		Fixed operator/(const Fixed &other) const;
+		
+		//increment/decrement operators
+		Fixed operator++() const;//pre-increment
+		Fixed operator++(int) const;// post-increment
+		Fixed operator--() const;// pre-decrement
+		Fixed operator--(int) const;//post-decrement
 };
 
 #endif

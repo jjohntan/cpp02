@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/09 20:38:35 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/10 15:17:01 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,10 +135,40 @@ Fixed Fixed::operator*(const Fixed &other) const
 		return newObj;
 }
 	
-	Fixed Fixed::operator/(const Fixed &other) const
-	{
-		Fixed newObj = (this->rawValue << fractionalBits) / other.rawValue;
-		
-		return newObj;
-	}
+Fixed Fixed::operator/(const Fixed &other) const
+{
+	Fixed newObj = (this->rawValue << fractionalBits) / other.rawValue;
+
+	return newObj;
+}
+
+//increment/decrement operators
+Fixed Fixed::operator++()//pre-increment
+{
+	this->rawValue++;
 	
+	return *this;
+}
+
+Fixed Fixed::operator++(int)// post-increment
+{
+	Fixed temp = *this;
+	this->rawValue++;
+	
+	return temp;
+}
+
+Fixed Fixed::operator--()// pre-decrement
+{
+	this->rawValue--;
+	
+	return *this;
+}
+
+Fixed Fixed::operator--(int)//post-decrement
+{
+	Fixed temp = *this;
+	this->rawValue--;
+	
+	return temp;
+}

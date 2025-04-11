@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:45 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 15:22:17 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 15:37:45 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,7 @@ class Fixed
 		//two references to constant fixed-point numbers
 		const Fixed &max(const Fixed &a, const Fixed &b);
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif

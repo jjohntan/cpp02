@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 15:35:53 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 15:39:09 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,4 +203,10 @@ const Fixed &max(const Fixed &a, const Fixed &b)
 	if (a > b)
 		return (a);
 	return (b);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+{
+	os << obj.toFloat();
+	return os;
 }

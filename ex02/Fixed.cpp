@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/10 15:17:01 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 14:46:12 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,4 +171,12 @@ Fixed Fixed::operator--(int)//post-decrement
 	this->rawValue--;
 	
 	return temp;
+}
+
+//two references on fixed-point number
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)	
+		return (a);
+	return (b);
 }

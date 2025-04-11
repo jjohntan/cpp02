@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 15:39:09 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 15:41:30 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ Fixed &Fixed::min(Fixed &a, Fixed &b)
 }
 
 //two references to constant fixed-point numbers
-const Fixed &min(const Fixed &a, const Fixed &b)
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if (a < b)
 		return (a);
@@ -190,7 +190,7 @@ const Fixed &min(const Fixed &a, const Fixed &b)
 }
 
 //two references on fixed-point numbers
-static Fixed &max(Fixed &a, Fixed &b)
+Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return (a);
@@ -198,7 +198,7 @@ static Fixed &max(Fixed &a, Fixed &b)
 }
 
 //two references to constant fixed-point numbers
-const Fixed &max(const Fixed &a, const Fixed &b)
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a > b)
 		return (a);

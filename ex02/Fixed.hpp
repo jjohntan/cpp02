@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:45 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/10 15:12:56 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 14:21:38 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ class Fixed
 		Fixed operator++(int);// post-increment
 		Fixed operator--();// pre-decrement
 		Fixed operator--(int);//post-decrement
+		
+		static Fixed &min(Fixed &a, Fixed &b);
 };
 
 #endif

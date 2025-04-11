@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 15:13:14 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 15:20:15 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,14 @@ Fixed &Fixed::min(Fixed &a, Fixed &b)
 const Fixed &min(const Fixed &a, const Fixed &b)
 {
 	if (a < b)
+		return (a);
+	return (b);
+}
+
+//two references on fixed-point numbers
+static Fixed &max(Fixed &a, Fixed &b)
+{
+	if (a > b)
 		return (a);
 	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 15:41:30 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 16:40:48 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * @brief Default constructor
  */
-Fixed::Fixed()
+Fixed::Fixed(): rawValue(0)
 {
 }
 
@@ -74,7 +74,7 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	return rawValue / (1 << fractionalBits);
+	return (float)rawValue / (1 << fractionalBits);
 }
 
 int Fixed::toInt( void ) const
@@ -130,9 +130,10 @@ Fixed Fixed::operator-(const Fixed &other) const
 	
 Fixed Fixed::operator*(const Fixed &other) const
 {
-		Fixed newObj = (this->rawValue * other.rawValue) >> fractionalBits;
-		
-		return newObj;
+	Fixed	newObj;
+	
+	newObj.setRawBits((this->rawValue * other.rawValue) >> fractionalBits);
+	return newObj;
 }
 	
 Fixed Fixed::operator/(const Fixed &other) const

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:45 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 14:28:05 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/11 15:07:20 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ class Fixed
 		
 		//two references on fixed-point number
 		static Fixed &min(Fixed &a, Fixed &b);
+		//two references to constant fixed-point numbers
+		static Fixed &min(const Fixed &a, const Fixed &b);
 };
 
 #endif

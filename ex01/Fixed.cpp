@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 19:26:12 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/08 15:53:17 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/13 16:47:37 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
 	
-	this->rawValue = roundf(value * (1 << fractionalBits));
+	this->rawValue = roundf(value * (1 << fractionalBits));//roundf: rounds a number to the nearest integer
 }
 
 /**

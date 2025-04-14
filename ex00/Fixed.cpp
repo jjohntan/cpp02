@@ -6,13 +6,13 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:46 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/08 15:17:03 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/12 17:30:56 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(): rawValue(0)
+Fixed::Fixed(): rawValue(0)//Default constructor
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -32,7 +32,7 @@ Fixed &Fixed::operator=(const Fixed &other)//Copy assignment operator
 	return *this;
 }
 
-Fixed::~Fixed()
+Fixed::~Fixed()//Destructor
 {
 	std::cout << "Destructor called" << std::endl;
 }

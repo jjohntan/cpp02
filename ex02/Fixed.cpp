@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/11 16:40:48 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/14 14:24:14 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const int value)
  */
 Fixed::Fixed(const float value)
 {
-	this->rawValue = roundf(value * (1 << fractionalBits));
+	this->rawValue = roundf(value * (1 << fractionalBits));//roundf: rounds a number to the nearest integer
 }
 
 /**
@@ -146,32 +146,32 @@ Fixed Fixed::operator/(const Fixed &other) const
 //increment/decrement operators
 Fixed Fixed::operator++()//pre-increment
 {
-	this->rawValue++;
+	this->rawValue++;//increase the raw value by 1
 	
 	return *this;
 }
 
 Fixed Fixed::operator++(int)// post-increment
 {
-	Fixed temp = *this;
-	this->rawValue++;
+	Fixed temp = *this;//store the current value
+	this->rawValue++;//increment raw value
 	
-	return temp;
+	return temp;//return old value
 }
 
 Fixed Fixed::operator--()// pre-decrement
 {
-	this->rawValue--;
+	this->rawValue--;//decrease the raw value by 1
 	
 	return *this;
 }
 
 Fixed Fixed::operator--(int)//post-decrement
 {
-	Fixed temp = *this;
-	this->rawValue--;
+	Fixed temp = *this;//store the current value
+	this->rawValue--;//decrement raw value
 	
-	return temp;
+	return temp;//return old value
 }
 
 //two references on fixed-point number
@@ -206,6 +206,12 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 	return (b);
 }
 
+/**
+ * @param os: out stream
+ * @param obj: object
+ * @brief An overload of the insertion («) operator that inserts a floating-point representation
+of the fixed-point number into the output stream object passed as parameter.
+ */
 std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
 	os << obj.toFloat();

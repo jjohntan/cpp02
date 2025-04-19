@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/14 14:24:14 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/19 16:50:01 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
  */
 Fixed::Fixed(): rawValue(0)
 {
+	std::cout << "Default constructor called" << std::endl;
 }
 
 /**
@@ -24,6 +25,8 @@ Fixed::Fixed(): rawValue(0)
  */
 Fixed::Fixed(const int value)
 {
+	std::cout << "Int constructor called" << std::endl;
+	
 	this->rawValue = value << fractionalBits;
 }
 
@@ -32,6 +35,8 @@ Fixed::Fixed(const int value)
  */
 Fixed::Fixed(const float value)
 {
+	std::cout << "Float constructor called" << std::endl;
+	
 	this->rawValue = roundf(value * (1 << fractionalBits));//roundf: rounds a number to the nearest integer
 }
 
@@ -40,6 +45,8 @@ Fixed::Fixed(const float value)
  */
 Fixed::Fixed(const Fixed &other)
 {
+	std::cout << "Copy constructor called" << std::endl;
+
 	*this = other;
 }
 
@@ -48,6 +55,8 @@ Fixed::Fixed(const Fixed &other)
  */
 Fixed &Fixed::operator=(const Fixed &other)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
+
 	if (this != &other)
 		this->rawValue = other.getRawBits();
 	return *this;
@@ -58,6 +67,7 @@ Fixed &Fixed::operator=(const Fixed &other)
  */
 Fixed::~Fixed()
 {
+	std::cout << "Destructor called" << std::endl;
 }
 /**
  * @brief getter function
@@ -138,8 +148,9 @@ Fixed Fixed::operator*(const Fixed &other) const
 	
 Fixed Fixed::operator/(const Fixed &other) const
 {
-	Fixed newObj = (this->rawValue << fractionalBits) / other.rawValue;
+	Fixed newObj;
 
+	newObj.setRawBits((this->rawValue / other.rawValue) << fractionalBits);
 	return newObj;
 }
 
@@ -148,7 +159,7 @@ Fixed Fixed::operator++()//pre-increment
 {
 	this->rawValue++;//increase the raw value by 1
 	
-	return *this;
+	return *this;//return new value by reference
 }
 
 Fixed Fixed::operator++(int)// post-increment
@@ -163,7 +174,7 @@ Fixed Fixed::operator--()// pre-decrement
 {
 	this->rawValue--;//decrease the raw value by 1
 	
-	return *this;
+	return *this;//return new value by reference
 }
 
 Fixed Fixed::operator--(int)//post-decrement

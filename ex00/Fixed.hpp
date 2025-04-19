@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:50:43 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/14 13:44:31 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/16 17:30:58 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 	private:
 		int rawValue;//store the fixed-point number value
-		static const int fractionalBits;//store the number of fractional bits. Its value will always be the integer literal 8.
+		static const int fractionalBits = 8;//store the number of fractional bits. Its value will always be the integer literal 8.
 	public:
 		Fixed();//Default constructor
 		Fixed(const Fixed &other);//Copy constructor

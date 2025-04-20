@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 16:01:48 by jetan             #+#    #+#             */
-/*   Updated: 2025/04/19 16:50:01 by jetan            ###   ########.fr       */
+/*   Updated: 2025/04/20 19:16:12 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed	newObj;
 	
-	newObj.setRawBits((this->rawValue * other.rawValue) >> fractionalBits);
+	newObj.setRawBits((this->rawValue * other.rawValue) >> fractionalBits);//convert back to float
 	return newObj;
 }
 	
@@ -150,7 +150,7 @@ Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed newObj;
 
-	newObj.setRawBits((this->rawValue / other.rawValue) << fractionalBits);
+	newObj.setRawBits((this->rawValue << fractionalBits) / other.rawValue);//convert back to float
 	return newObj;
 }
 
